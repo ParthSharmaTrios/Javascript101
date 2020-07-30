@@ -1,0 +1,113 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>Tuesday </title>
+
+  <script type="text/javascript">
+
+    // var is_eligible_to_vote = true
+    // var name = "John"
+    // var num = "1.99"
+    //
+    // document.write(Number(name)+"<br>")
+    // document.write(Number(is_eligible_to_vote)+"<br>")
+    // document.write(Number(num))
+
+
+    //A function defination
+
+    function welcome(){
+
+      var name = prompt("Enter your name")
+
+    //  document.write("Welcome "+ name)
+
+      document.getElementById("welcome").innerHTML = "<em>Welcome</em> "+name
+
+      greetings()
+
+    }
+
+
+    function greetings(){
+       alert("Hope you have a wonderful day!")
+    }
+
+
+
+    function SwitchOn(){
+
+        var bulb = document.getElementById("bulb")
+
+        bulb.src="https://www.w3schools.com/js/pic_bulbon.gif"
+    }
+
+
+    function SwitchOff(){
+
+      document.getElementById("bulb").src = "https://www.w3schools.com/js/pic_bulboff.gif"
+    }
+
+
+
+
+    function welcome2(){
+        var name =   document.getElementById('txtBox')
+
+        document.getElementById('result').innerHTML = 'Welcome '+name.value
+
+        //name.value=""
+    }
+
+
+
+  </script>
+
+
+
+</head>
+
+
+<body>
+
+  <noscript>
+     Sory your browser does not support JS and Our website uses JS
+  </noscript>
+
+
+  <!-- <h1 id="welcome"></h1>
+
+
+  <button onclick="welcome()" >Click me</button>
+  <button onclick="greetings()">click me for greetings </button> -->
+
+
+
+
+  <!-- <h1>Light Bulb </h1>
+
+  <button onclick="SwitchOn()">ON</button>
+  <button onclick="SwitchOff()">OFF</button>
+  <button onclick="document.getElementById('bulb').src = 'https://www.w3schools.com/js/pic_bulboff.gif'">Inline OFF</button>
+
+  <br><br>
+
+  <img src="https://www.w3schools.com/js/pic_bulboff.gif" id="bulb"> -->
+
+
+
+
+
+  <h1> Using Text Boxes </h1>
+
+  <input type="text" placeholder="your name" id="txtBox" onkeypress="welcome2()">
+  <!-- <button onclick="welcome2()">click me</button> -->
+
+  <h2 id="result">Welcome msg</h2>
+
+</body>
+
+
+</html>
