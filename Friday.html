@@ -1,0 +1,139 @@
+<!doctype html>
+
+
+<html lang="en">
+
+<head>
+
+  <title>Friday If-Conditions</title>
+
+
+  <script>
+
+
+    function calculate_shipping(){
+
+      var price = Number(document.getElementById('price').value)
+
+      if(price >= 1 && price <= 20){
+        document.getElementById('shipping_cost').innerHTML = 'Your Shipping cost is $5'
+      }else if(price > 20 && price <=30){
+        document.getElementById('shipping_cost').innerHTML = 'Your Shipping cost is $3'
+      }else if(price >= 31 && price <= 49){
+        document.getElementById('shipping_cost').innerHTML = 'Your Shipping cost is $2'
+      }else{
+        document.getElementById('shipping_cost').innerHTML = 'Your Shipping is FREE'
+
+      }
+
+    }
+
+
+    function welcomeOrNot(){
+
+      var name = document.getElementById('name').value
+
+
+
+
+      if(name.toLowerCase() == 'john' || name.toUpperCase() =='JANE'){
+        document.getElementById('welcome_msg').innerHTML = 'Welcome'
+
+      }else{
+        document.getElementById('welcome_msg').innerHTML = 'You are not Welcome'
+
+      }
+
+
+      // if(name == 'John'){
+      //   document.getElementById('welcome_msg').innerHTML = 'Welcome'
+      //
+      // }else if(name == 'Jane'){
+      //   document.getElementById('welcome_msg').innerHTML = 'Welcome'
+      //
+      // }else{
+      //   document.getElementById('welcome_msg').innerHTML = 'You are not Welcome'
+      //
+      // }
+    }
+
+    function NameEvenOdd(){
+
+      var name = document.getElementById('name').value
+
+
+      if(name.length % 2 == 0){
+
+          if(name.startsWith("A") || name.startsWith("B")){
+            document.getElementById('name_result').innerHTML = 'Lucky EVEN'
+          }else{
+            document.getElementById('name_result').innerHTML = ' EVEN'
+
+          }
+
+      }else{
+        document.getElementById('name_result').innerHTML = 'ODD'
+
+      }
+
+
+
+      // if(name.length %2 == 0 &&( name.startsWith("A") || name.startsWith("B") )){
+      //   document.getElementById('name_result').innerHTML = 'Lucky EVEN'
+      //
+      // }else if(name.length %2 ==0){
+      //   document.getElementById('name_result').innerHTML = 'EVEN'
+      //
+      // }
+      // else{
+      //   document.getElementById('name_result').innerHTML = 'ODD'
+      //
+      // }
+
+    }
+
+
+  </script>
+
+
+
+</head>
+
+<body>
+
+  <!-- <h1> Shipping fee calculations </h1>
+
+  <input type="text" placeholder="enter price of the product" id="price">
+  <button onclick="calculate_shipping()">Calculate Shipping</button>
+
+  <br><br>
+
+  <h2 id="shipping_cost"></h2> -->
+
+
+
+
+  <!-- <h1> Welcome or not </h1>
+
+  <input type="text" placeholder="enter your name" id="name">
+  <button onclick="welcomeOrNot()">Submit</button>
+
+  <br><br>
+
+  <h2 id="welcome_msg"></h2> -->
+
+
+  <h1> Name Even or Odd </h1>
+
+  <input type="text" placeholder="enter your name" id="name">
+  <button onclick="NameEvenOdd()">Submit</button>
+
+  <br><br>
+
+  <h2 id="name_result"></h2>
+
+
+
+</body>
+
+</html>
