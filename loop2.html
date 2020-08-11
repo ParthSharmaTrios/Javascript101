@@ -1,0 +1,145 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title> </title>
+
+  <script type="text/javascript">
+
+
+    function reverse(){
+
+      var name = document.getElementById('name').value
+
+
+      var reverse=''
+
+      for(var i=name.length; i>=0 ; i--){
+         reverse = reverse + name.charAt(i)
+      }
+
+      document.getElementById('result').innerHTML = reverse
+
+    }
+
+
+  function allCaps(){
+
+    var name = document.getElementById('name').value
+
+    var caps = ''
+
+    for(var i=0; i< name.length ; i++){
+
+        caps = caps +  name.charAt(i).toUpperCase()
+
+    }
+
+    document.getElementById('result').innerHTML = caps
+
+
+  }
+
+
+
+  function evenOdd(){
+
+    var name = document.getElementById('name').value
+    var result = ''
+
+    for(var i=0 ; i< name.length; i++){
+
+      if(i % 2 !=0){
+        result = result + name.charAt(i).toUpperCase()
+      }else{
+
+        result = result + name.charAt(i).toLowerCase()
+      }
+    }
+
+  document.getElementById('result').innerHTML = result
+
+
+
+  }
+
+
+
+  function countVowels(){
+    var name = document.getElementById('name').value
+    var counter = 0
+
+    for(var i = 0 ; i < name.length ; i ++){
+
+       if(name.charAt(i) == 'a' || name.charAt(i) == 'e' || name.charAt(i) == 'i' || name.charAt(i) == 'o' ||
+          name.charAt(i) == 'u'){
+
+            counter++
+
+          }
+    }
+
+
+
+    document.getElementById('result').innerHTML = counter
+
+
+  }
+
+
+function factorial(){
+
+  var num = parseInt(document.getElementById('number').value)
+
+  var result = 1
+  //var result = 0
+
+  for(var i = num ; i >= 1 ; i--){
+
+    result = result*i
+    //result = result + i
+  }
+
+  document.getElementById('result').innerHTML = result
+
+}
+
+
+// sam => sm
+// john => jhn
+// anderson => ndrsn
+//
+// sam=> a
+// john => o
+// anderson => aeo
+//
+//
+// sam => sAm
+// john => jOhn
+// anderson => AndErsOn
+  </script>
+
+</head>
+
+
+<body>
+
+
+<h1>Learning about loops</h1>
+
+<h2 id="result"></h2>
+
+
+  <input type="text" id="number"> <br>
+
+  <button onclick="factorial()">Submit</button>
+
+
+
+
+
+</body>
+
+
+</html>
