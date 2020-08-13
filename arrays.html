@@ -1,0 +1,109 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title> Learning about JS Arrays</title>
+
+  <script type="text/javascript">
+
+
+    var names=["john","jane","alex","smith","jay","ss","aa"]
+
+    // document.write(names)
+    //
+    // names[4] = "sam"
+    //
+    // document.write("<br>")
+    // document.write(names)
+    //
+    // names[10] = "tim"
+    //
+    // document.write("<br>")
+    // document.write(names)
+
+
+  // document.write(names[0])
+  // document.write("<br>")
+  // document.write(names[1])
+  // document.write("<br>")
+  // document.write(names[3])
+  // document.write("<br>")
+
+
+  // for(var i=0; i < names.length; i++){
+  //
+  //     document.write(names[i])
+  //     document.write("<br>")
+  // }
+
+
+   // var even = []
+   // var odd = []
+   //
+   //
+   // var total_numbers = prompt("How many number do you want to enter?")
+   //
+   //
+   //
+   // for(var i = 1; i<=total_numbers ; i++){
+   //
+   //    var num = prompt("enter a number")
+   //
+   //    if(num%2==0){
+   //      even.push(num)
+   //    }else{
+   //      odd.push(num)
+   //    }
+   //
+   // }
+   //
+   // document.write(even)
+   // document.write("<br>")
+   // document.write(odd)
+
+
+   var numbers = []
+  var reverse =[]
+
+   var total_numbers = prompt("How many number do you want to enter?")
+
+
+
+   for(var i = 1; i<=total_numbers ; i++){
+
+      var num = prompt("enter a number")
+
+      numbers.push(num)
+   }
+
+   for(var i=numbers.length-1; i>=0 ; i--){
+
+     reverse.push(numbers[i])
+   }
+
+   document.write(numbers)
+   document.write("<br>")
+   document.write(reverse)
+
+
+
+
+
+  </script>
+
+</head>
+
+
+<body>
+
+
+<h1>Learning about Array</h1>
+
+
+
+
+</body>
+
+
+</html>
