@@ -1,0 +1,113 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title> Learning about JS Function</title>
+
+  <script type="text/javascript">
+
+    //signature of a function
+    function greetings(user_name,age){
+
+        //alert("Welcome "+user_name+ "! Your age is "+age)
+
+      var greeting_msg = "Welcome "+user_name + "! Your age is "+age
+
+      return greeting_msg
+
+    }
+
+
+    // var msg = greetings("john",20)
+    // alert(msg)
+    //
+    // alert(greetings("jane",10))
+    //
+    // greetings("alex",18)
+    // greetings("tim",22)
+
+
+
+    function sum(a,b){
+
+      return a+b
+    }
+
+    // alert(sum(1,2))
+    // alert(sum(10,2))
+    // alert(sum(10,20))
+
+
+    function EvenOdd(num){
+
+      if(num == 0){
+        alert("it's zero")
+      }else if (num % 2 == 0) {
+        alert("even number")
+      }else{
+        alert("odd")
+      }
+    }
+
+    //
+    // first = total price
+    // second = discount
+    //
+    //
+    // 100,10 => 90
+    //
+    // 1000,20 => 800
+    //
+    //
+    // total_price, city => shipping cost
+    //
+    // city= brampton => $0
+    //
+    // total_price < 40 => $10
+    // total_price > $40 => 0
+
+
+    function shippingCost(total,city){
+
+      if(city =='brampton'){
+        return 0
+      }
+
+      if(total < 40){
+        return 10
+      }else{
+        return 0
+      }
+    }
+
+
+
+
+
+
+    // 1. A function can have parameters
+    // 2. Will not have parameters
+    //
+    // 3. It can return something
+    // 4. Will not return something
+
+
+
+  </script>
+
+</head>
+
+
+<body>
+
+
+<h1>Learning about Functions</h1>
+
+
+
+
+</body>
+
+
+</html>

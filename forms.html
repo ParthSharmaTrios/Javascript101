@@ -1,0 +1,108 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title> </title>
+
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+
+
+    function validation(){
+
+        var fname = document.getElementById('fname')
+        var lname = document.forms['myForm']['lname']
+
+        var err_alert_box = document.getElementById('errors')
+
+        var error_msg = "<strong>Whoops!</strong><br>  <ul>"
+
+        var errors = []
+
+
+        if(fname.value=="" || fname.value.length < 2){
+
+          errors.push("please enter a valid first name")
+          fname.classList.add('is-invalid')
+        }
+
+        if(lname.value==""){
+          errors.push("please enter a valid last name")
+          lname.classList.add('is-invalid')
+
+        }
+
+        for(var i=0 ; i< errors.length;i++){
+          error_msg = error_msg + '<li>'+ errors[i]+ '</li>'
+
+        }
+
+        if(errors.length > 0){
+          err_alert_box.style.display= 'block'
+        }
+
+        error_msg= error_msg+"</ul>"
+
+          err_alert_box.innerHTML = error_msg
+
+
+        event.preventDefault()
+    }
+
+
+
+
+  </script>
+
+</head>
+
+
+
+
+<body>
+
+<div class="container">
+  <div class="row">
+      <div class="col-12">
+        <h1>This page is Not UGLY anymore</h1>
+
+      </div>
+
+
+      <div class="col-12">
+
+
+            <div class="alert alert-danger" id="errors" style="display:none;">
+            </div>
+
+
+            <form onsubmit="return validation()" name="myForm">
+
+              First Name : <input type="text" name="fname" id="fname" class="form-control"><br><br>
+              Last Name : <input type="text" name="lname" class="form-control"><br><br>
+
+              <input type="submit" class="btn btn-primary">
+
+
+            </form>
+      </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+</body>
+
+
+</html>
