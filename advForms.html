@@ -1,0 +1,169 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title> </title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+
+
+    function validation(){
+
+      var status = [true,true,true,true,true]
+
+      var fname = document.forms['myForm']['fname']
+      var lname = document.forms['myForm']['lname']
+      var email = document.forms['myForm']['email']
+      var pass = document.forms['myForm']['pass']
+      var confirm = document.forms['myForm']['confirm-pass']
+
+      var msg_box = document.getElementById('errors')
+      var err_msg = "<strong>Whoops!</strong><ul>"
+      var errors = []
+
+      if(fname.value=="" || fname.value.length < 3 || fname.value.length > 16){
+        errors.push("please enter a valid first name")
+        fname.classList.add('is-invalid')
+        status[0]=false
+      }
+
+      if(lname.value=="" || lname.value.length < 3 || lname.value.length > 16){
+        errors.push("please enter a valid last name")
+        lname.classList.add('is-invalid')
+        status[1]=false
+
+      }
+
+      // || => OR
+      // && => AND
+
+
+      if(email.value=="" || email.value.length < 3 || !email.value.includes('@') || !email.value.includes('.')){
+        errors.push("please enter a valid email")
+        email.classList.add('is-invalid')
+        status[2]=false
+
+      }
+
+      if(pass.value=="" || pass.value.length < 3 ){
+        errors.push("please enter a valid password")
+        pass.classList.add('is-invalid')
+        status[3]=false
+
+      }
+
+      if(confirm.value=="" || confirm.value.length <  3){
+        errors.push("please enter a valid confirm password")
+        confirm.classList.add('is-invalid')
+        status[4]=false
+
+      }
+
+
+      if(pass.value != confirm.value){
+
+        errors.push("your password and confirm pass should match")
+        pass.classList.add('is-invalid')
+        confirm.classList.add('is-invalid')
+      }
+
+      if(pass.value == confirm.value){
+        pass.classList.add('is-valid')
+        confirm.classList.add('is-valid')
+      }
+
+
+      if(errors.length > 0){
+
+        for(var i=0; i < errors.length ; i++){
+          err_msg = err_msg + '<li>'+errors[i]+'</li>'
+        }
+
+        msg_box.style.display="block"
+      }
+
+
+      err_msg = err_msg+"</ul>"
+
+      msg_box.innerHTML = err_msg
+
+      for(var i =0; i< status.length; i++){
+
+        if(status[i]==true){
+            document.forms['myForm'][i].classList.add('is-valid')
+            document.forms['myForm'][i].classList.remove('is-invalid')
+          //  document.forms['myForm']['fname'].classList.add('is-valid')
+        }
+
+      }
+
+      if(errors.length == 0){
+        msg_box.style.display="none"
+      }
+
+
+        event.preventDefault()
+    }
+
+
+
+
+
+
+
+  </script>
+
+</head>
+
+
+
+
+<body>
+
+<div class="container">
+  <div class="row">
+      <div class="col-12">
+        <h1>My form</h1>
+
+      </div>
+
+
+      <div class="col-12">
+
+
+            <div class="alert alert-danger" id="errors" style="display:none;">
+            </div>
+
+            <div class="alert alert-success" id="success" style="display:none;">
+            </div>
+
+
+            <form onsubmit="return validation()" name="myForm">
+
+              First Name : <input type="text" name="fname"  class="form-control"><br><br>
+              Last Name : <input type="text" name="lname" class="form-control"><br><br>
+              Email : <input type="text" name="email" class="form-control"><br><br>
+              password : <input type="password" name="pass" class="form-control"><br><br>
+              Confirm Password : <input type="password" name="confirm-pass" class="form-control"><br><br>
+
+
+
+
+              <input type="submit" class="btn btn-primary">
+
+
+            </form>
+      </div>
+
+  </div>
+</div>
+
+
+</body>
+</html>
