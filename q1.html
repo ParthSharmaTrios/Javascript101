@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>atoms decayed</title>
+</head>
+<body>
+<p>print number of atoms</p>
+<script>
+
+
+   function simulate(atoms,decayProb){
+
+		 var counter = 1;
+		 var decayed = 0
+
+
+
+
+		 while(atoms> 0){
+
+			 decayed=0
+
+			 	for(var i=1; i<=atoms;i++ ){
+					if(Math.random() <= decayProb){
+						decayed++;
+					}
+
+
+				}
+
+				atoms = atoms-decayed
+
+
+
+
+				document.write(`total atoms = ${atoms} , year ${counter}`)
+				document.write('<br>')
+				counter++
+
+
+		 }
+
+
+
+		 // while(atoms>0){
+		 //
+		 //
+		 //
+		 //
+			//  for(var i=1; i <=atoms; i++){
+			// 		var rn = Math.random()
+		 //
+			// 		if(rn<=decayProb)
+			// 		{
+			// 		//	console.log("hh")
+			// 			decayed++
+			// 		}
+		 //
+		 //
+			// 	//	console.log(`${atoms} = ${atoms-decayed}`)
+		 //
+		 //
+		 //
+			// 	}
+			// 	console.log(`total atoms = ${atoms}`)
+			// 	atoms=atoms-decayed
+			// 	console.log(`total atoms = ${atoms}`)
+		 //
+		 //
+			// 	document.write('There are ' +decayed+ ' atoms at the end of the year '+counter)
+			// 	document.write('<br>')
+		 //
+			// 	counter++
+		 //
+		 //
+		 //
+		 //
+		 //
+		 //
+		 //
+		 //
+		 //
+		 // }
+	 }
+
+// 	function simulateRadioactiveDecay(atoms,decayProb)
+// 	{
+// 		var year=1
+// 		var decayed=0
+//
+// 		while(atoms==0)
+// 		{
+//
+// 		  for(var i=1; i<=atoms; i++)
+// 		  {
+// 				var rn = Math.random()
+//
+// 				if(rn<=decayProb)
+// 				{
+// 					console.log("hhh")
+// 					decayed++
+// 				}
+// 		  }
+//
+// 		atoms=atoms-decayed
+//
+//
+// 		}
+// 		document.write('There are ' +atoms+ ' atoms at the end of the year'+year)
+// 		year+=1
+//
+// }
+	simulate(10000,0.5)
+
+</script>
+</body>
+</html>
